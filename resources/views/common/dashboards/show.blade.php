@@ -77,6 +77,7 @@
                 'name' => trans('general.name'),
                 'type' => trans_choice('general.types', 1),
                 'width' => trans('general.width'),
+                'limit' => trans('general.limit'),
                 'sort' => trans('general.sort'),
                 'enabled' => trans('general.enabled'),
                 'yes' => trans('general.yes'),
@@ -89,6 +90,7 @@
                 'name' => trans('general.form.enter', ['field' => trans('general.name')]),
                 'type' => trans('general.form.select.field', ['field' => trans_choice('general.types', 1)]),
                 'width' => trans('general.form.select.field', ['field' => trans('general.width')]),
+                'limit' => trans('general.form.enter', ['field' => trans('general.limit')]),
                 'sort' => trans('general.form.enter', ['field' => trans('general.sort')])
             ]);
         @endphp
@@ -100,9 +102,11 @@
             :widget_id="widget.id"
             :name="widget.name"
             :width="widget.width"
+            :limit="widget.limit"
             :action="widget.action"
             :type="widget.class"
             :types="widgets"
+            :settings="widget_settings"
             :sort="widget.sort"
             :dashboard_id="{{ $dashboard->id }}"
             :text="{{ $text }}"
