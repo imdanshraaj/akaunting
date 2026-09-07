@@ -143,6 +143,7 @@ trait SearchString
 
         $valid_columns = array_unique(array_merge(
             array_keys($model_config_columns),
+            array_values(array_filter($model_config_columns, 'is_string')),
             array_values(config('search-string.default.keywords', [])),
             array_keys(config('search-string.default.columns', [])),
         ));
