@@ -19,7 +19,7 @@ class Accounts extends ApiController
      */
     public function index()
     {
-        $accounts = Account::collect();
+        $accounts = Account::with('owner')->collect();
 
         return Resource::collection($accounts);
     }
